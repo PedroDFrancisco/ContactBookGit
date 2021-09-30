@@ -162,10 +162,11 @@ public class Main {
     private static void getNumber(Scanner in, ContactBook cBook) {
         Contact book;
         int phone;
+        book = cBook.getNumber(phone);
         phone = in.nextInt(); in.nextLine();
 
-        if (/*novo comando q usa phone para confirmar existencia*/) {
-            book = cBook.getNumber(phone);
+        if (book != null) {
+
             System.out.println(book.getName());
         }
         else System.out.println(PHONE_NOT_EXIST);

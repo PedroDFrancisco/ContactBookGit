@@ -56,10 +56,10 @@ public class Main {
                     listAllContacts(cBook);
                     break;
                 case GET_NUMBER:
-                    listAllContacts(cBook);
+
                     break;
                 case EQUAL_PHONE:
-                    listAllContacts(cBook);
+
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);

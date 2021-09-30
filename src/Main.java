@@ -162,8 +162,8 @@ public class Main {
     private static void getNumber(Scanner in, ContactBook cBook) {
         Contact book;
         int phone;
-        book = cBook.getNumber(phone);
         phone = in.nextInt(); in.nextLine();
+        book = cBook.getNumber(phone);
 
         if (book != null) {
 

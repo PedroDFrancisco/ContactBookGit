@@ -26,6 +26,9 @@ public class Main {
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
+    public static final String EQUAL_NUMBER_EXIST = "There are contacts that share phone numbers.";
+    public static final String EQUAL_NUMBER_NOT_EXIST = "All contacts have different phone numbers";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -56,10 +59,10 @@ public class Main {
                     listAllContacts(cBook);
                     break;
                 case GET_NUMBER:
-
+                    getNumber(in,cBook);
                     break;
                 case EQUAL_PHONE:
-
+                    isThereEqualPhone(in,cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -154,5 +157,27 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void getNumber(Scanner in, ContactBook cBook) {
+        Contact book;
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+
+        if (/*novo comando q usa phone para confirmar existencia*/) {
+            book = cBook.getNumber(phone);
+            System.out.println(book.getName());
+        }
+        else System.out.println(PHONE_NOT_EXIST);
+    }
+
+    private static void isThereEqualPhone(Scanner in, ContactBook cBook) {
+        int phone;
+        phone = in.nextInt(); in.nextLine();
+
+        if (/*novo comando q usa phone para confirmar existencia*/) {
+            System.out.println(EQUAL_NUMBER_EXIST);
+        }
+        else System.out.println(EQUAL_NUMBER_NOT_EXIST);
     }
 }

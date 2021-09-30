@@ -60,7 +60,7 @@ public class ContactBook {
 
     public Contact getNumber(int phone){
         Contact number = null;
-        for(int i = contacts.length; i > 0 ; i++){
+        for(int i = contacts.length; i >= 0 ; i--){
             if(contacts[i].getPhone() == phone){
                 number = contacts[i];
             }

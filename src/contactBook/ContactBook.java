@@ -60,11 +60,13 @@ public class ContactBook {
 
     public Contact getNumber(int phone){
         Contact number = null;
-        for(int i = contacts.length; i > 0 ; i++){
-            if(contacts[i].getPhone() == phone){
+
+        for(int i = contacts.length - 1; i >= 0 ; i--) {
+            if(contacts[i].getPhone() == phone) {
                 number = contacts[i];
             }
         }
+
         return number;
     }
 

@@ -60,7 +60,7 @@ public class ContactBook {
 
     public Contact getNumber(int phone){
         Contact number = null;
-        for(int i = contacts.length -1; i >= 0 ; i--){
+        for(int i = counter - 1; i >= 0 ; i--){
             if(contacts[i].getPhone() == phone){
                 number = contacts[i];
             }
@@ -68,18 +68,15 @@ public class ContactBook {
         return number;
     }
 
-    public boolean isRepeated(int phone) {
+    public boolean isRepeated() {
         int c = 0;
-        for (Contact contact : contacts) {
-            if (phone == contact.getPhone()) {
-                c++;
-
-                if (c > 1) {
+        for (int j = 0; j < counter; j++) {
+            for (int i = counter - 1; i > j; i--) {
+                if (contacts[j].getPhone() == contacts[i].getPhone()) {
                     return true;
                 }
             }
         }
-
         return false;
     }
 

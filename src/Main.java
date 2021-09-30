@@ -28,7 +28,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String EQUAL_NUMBER_EXIST = "There are contacts that share phone numbers.";
-    public static final String EQUAL_NUMBER_NOT_EXIST = "All contacts have different phone numbers";
+    public static final String EQUAL_NUMBER_NOT_EXIST = "All contacts have different phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -62,7 +62,7 @@ public class Main {
                     getNumber(in,cBook);
                     break;
                 case EQUAL_PHONE:
-                    isThereEqualPhone(in,cBook);
+                    isThereEqualPhone(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -158,10 +158,10 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
-
     private static void getNumber(Scanner in, ContactBook cBook) {
         Contact book;
-        int phone;
+        int phone = 0;
+        book = cBook.getNumber(phone);
         phone = in.nextInt(); in.nextLine();
         book = cBook.getNumber(phone);
 
@@ -171,11 +171,8 @@ public class Main {
         else System.out.println(PHONE_NOT_EXIST);
     }
 
-    private static void isThereEqualPhone(Scanner in, ContactBook cBook) {
-        int phone;
-        phone = in.nextInt(); in.nextLine();
-
-        if (cBook.isRepeated(phone)) {
+    private static void isThereEqualPhone( ContactBook cBook) {
+        if (cBook.isRepeated()) {
             System.out.println(EQUAL_NUMBER_EXIST);
         }
         else System.out.println(EQUAL_NUMBER_NOT_EXIST);

@@ -175,7 +175,7 @@ public class Main {
         int phone;
         phone = in.nextInt(); in.nextLine();
 
-        if (/*novo comando q usa phone para confirmar existencia*/) {
+        if (cBook.isRepeated(phone)) {
             System.out.println(EQUAL_NUMBER_EXIST);
         }
         else System.out.println(EQUAL_NUMBER_NOT_EXIST);

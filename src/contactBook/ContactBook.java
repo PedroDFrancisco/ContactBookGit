@@ -70,6 +70,22 @@ public class ContactBook {
         return number;
     }
 
+    public boolean isRepeated(int phone) {
+        int c = 0;
+
+        for (Contact contact : contacts) {
+            if (phone == contact.getPhone()) {
+                c++;
+
+                if (c > 1) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     private int searchIndex(String name) {
         int i = 0;
         int result = -1;

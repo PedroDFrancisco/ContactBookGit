@@ -70,7 +70,6 @@ public class ContactBook {
 
     public boolean isRepeated(int phone) {
         int c = 0;
-
         for (Contact contact : contacts) {
             if (phone == contact.getPhone()) {
                 c++;

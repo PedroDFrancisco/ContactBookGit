@@ -163,9 +163,10 @@ public class Main {
         Contact book;
         int phone;
         phone = in.nextInt(); in.nextLine();
+        book = cBook.getNumber(phone);
 
-        if (/*novo comando q usa phone para confirmar existencia*/) {
-            book = cBook.getNumber(phone);
+        if (book != null) {
+
             System.out.println(book.getName());
         }
         else System.out.println(PHONE_NOT_EXIST);

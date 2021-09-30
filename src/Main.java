@@ -166,7 +166,6 @@ public class Main {
         book = cBook.getNumber(phone);
 
         if (book != null) {
-
             System.out.println(book.getName());
         }
         else System.out.println(PHONE_NOT_EXIST);
